@@ -17,7 +17,7 @@ abstract class TestCase extends Orchestra
 
     protected function getEnvironmentSetUp($app)
     {
-        if (env('database.default', false) !== false) {
+        if (env('database.default', false) === false) {
             $app['config']->set('database.default', 'test');
 
             $app['config']->set('database.connections.test', [
