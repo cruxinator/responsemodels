@@ -247,8 +247,8 @@ foreach ($files as $file) {
         case str_contains($file, determineSeparator('src/Facades/Contracts/SkeletonContract.php')):
             rename($file, determineSeparator('./src/Facades/Contracts/' . $className . 'Contract.php'));
             break;
-        case str_contains($file, determineSeparator('src/Commands/SkeletonCommand.php')):
-            rename($file, determineSeparator('./src/Commands/' . $className . 'Command.php'));
+        case str_contains($file, determineSeparator('src/Console/SkeletonCommand.php')):
+            rename($file, determineSeparator('./src/Console/' . $className . 'Command.php'));
             break;
         case str_contains($file, determineSeparator('database/migrations/create_skeleton_table.php.stub')):
             rename($file, determineSeparator('./database/migrations/create_' . str_replace('-', '_', $packageSlugWithoutPrefix) . '_table.php.stub'));

@@ -17,8 +17,8 @@
     ],
     "require": {
         "php": "^7.3|^8.0",
-        "cruxinator/laravel-package": "dev-main"
-
+        "cruxinator/laravel-package": "dev-main",
+        "ext-json": "*"
     },
     "require-dev": {
         "nunomaduro/larastan": "^0.4.0",

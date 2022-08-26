@@ -1,0 +1,13 @@
+<?php
+
+namespace DummyNamespace;
+
+use ResponseModel\ResponseModel;
+
+class DummyClass extends ResponseModel
+{
+    public function __construct()
+    {
+        //
+    }
+}
