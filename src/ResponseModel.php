@@ -4,12 +4,12 @@ namespace Cruxinator\ResponseModel;
 
 use ArrayAccess;
 use Closure;
+use Cruxinator\Package\Strings\MyStr;
+use Cruxinator\Package\Strings\Stringable;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Collection;
-use Cruxinator\Package\Strings\MyStr;
-use Cruxinator\Package\Strings\Stringable;
 use ReflectionClass;
 use ReflectionMethod;
 use ReflectionProperty;
@@ -48,7 +48,8 @@ abstract class ResponseModel implements Arrayable, Responsable, ArrayAccess
                 $this->items(),
                 $this->getResponseCode(),
                 $this->getHeaders(),
-                $this->getJsonOptions());
+                $this->getJsonOptions()
+            );
         }
 
         return response()->view($this->view, $this);
@@ -59,12 +60,12 @@ abstract class ResponseModel implements Arrayable, Responsable, ArrayAccess
         return 200;
     }
 
-    protected function getHeaders():array
+    protected function getHeaders(): array
     {
         return [];
     }
 
-    protected function getJsonOptions():int
+    protected function getJsonOptions(): int
     {
         return $this->prettyPrintJson ? JSON_PRETTY_PRINT : 0;
     }
@@ -117,10 +118,12 @@ abstract class ResponseModel implements Arrayable, Responsable, ArrayAccess
         //}
         //return array_merge($publicMethodNames,$this->ignore);
 
-        return array_merge(array_map(function (ReflectionMethod $method) {
+        return array_merge(array_map(
+            function (ReflectionMethod $method) {
             return $method->getName();
         },
-        (new ReflectionClass(self::class))->getMethods(ReflectionMethod::IS_PUBLIC)), $this->ignore);
+            (new ReflectionClass(self::class))->getMethods(ReflectionMethod::IS_PUBLIC)
+        ), $this->ignore);
     }
 
     protected function createVariableFromMethod(ReflectionMethod $method)//: Closure
@@ -132,9 +135,10 @@ abstract class ResponseModel implements Arrayable, Responsable, ArrayAccess
         return Closure::fromCallable([$this, $method->getName()]);
     }
 
-    protected function addIgnore(array $items):self
+    protected function addIgnore(array $items): self
     {
         $this->ignore = array_merge($items, $this->ignore);
+
         return $this;
     }
 

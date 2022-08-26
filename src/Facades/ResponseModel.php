@@ -2,8 +2,8 @@
 
 namespace Cruxinator\ResponseModel\Facades;
 
-use Illuminate\Support\Facades\Facade;
 use Cruxinator\ResponseModel\Facades\Contracts\ResponseModelContract;
+use Illuminate\Support\Facades\Facade;
 
 /**
  * @see \Cruxinator\ResponseModel\ResponseModel

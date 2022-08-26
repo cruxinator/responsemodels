@@ -2,8 +2,8 @@
 
 namespace Cruxinator\ResponseModel\Console;
 
-use Illuminate\Console\GeneratorCommand;
 use Cruxinator\Package\Strings\MyStr;
+use Illuminate\Console\GeneratorCommand;
 use Symfony\Component\Console\Input\InputOption;
 
 class ResponseModelMakeCommand extends GeneratorCommand
