@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace Cruxinator\ResponseModel\Tests;
 
 class ExampleTest extends TestCase
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Cruxinator\ResponseModel\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class ResponseModelCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'responsemodels';
 
     public $description = 'My command';
 

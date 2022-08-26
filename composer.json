@@ -1,29 +1,23 @@
 {
-    "name": ":vendor_slug/:package_slug",
+    "name": "cruxinator/responsemodels",
     "description": "Encapsulate content leaving Laravel framework",
     "keywords": [
-        ":vendor_name",
+        "cruxinator",
         "laravel",
-        ":package_slug"
+        "responsemodels"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/cruxinator/responsemodels",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Alex Goodwin",
+            "email": "cyberia.resurrection@gmail.com",
             "role": "Developer"
-        }
-    ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "cruxinator/laravel-package"
         }
     ],
     "require": {
         "php": "^7.3|^8.0",
-        "cruxinator/laravel-package-provider": "dev-master"
+        "cruxinator/laravel-package": "dev-main"
 
     },
     "require-dev": {
@@ -37,12 +31,12 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src"
+            "Cruxinator\\ResponseModel\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Cruxinator\\ResponseModel\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -51,15 +45,18 @@
         "test-coverage": "vendor/bin/phpunit --coverage-html=cover/"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Cruxinator\\ResponseModel\\ResponseModelServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "ResponseModel": "Cruxinator\\ResponseModel\\Facades\\ResponseModel"
             }
         }
     },

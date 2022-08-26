@@ -169,7 +169,7 @@ $authorName = ask('Author name', $gitName);
 $gitEmail = run('git config user.email');
 $authorEmail = ask('Author email', $gitEmail);
 
-$usernameGuess = explode(':', run('git config remote.origin.url'))[1];
+$usernameGuess = explode(':', run('git config remote.upstream.url'))[1];
 $usernameGuess = dirname($usernameGuess);
 $usernameGuess = basename($usernameGuess);
 $authorUsername = ask('Author username', $usernameGuess);
@@ -187,7 +187,7 @@ $packageSlug = slugify($packageName);
 $packageSlugWithoutPrefix = remove_prefix('laravel-', $packageSlug);
 
 $className = title_case($packageName);
-$className = ask('Class name', $className);
+$className = ask('Class name', $className);  // change to Facade name
 $variableName = lcfirst($className);
 $description = ask('Package description', "This is my package {$packageSlug}");
 
