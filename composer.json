@@ -1,6 +1,6 @@
 {
     "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "description": "Encapsulate content leaving Laravel framework",
     "keywords": [
         ":vendor_name",
         "laravel",
