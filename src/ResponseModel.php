@@ -120,8 +120,8 @@ abstract class ResponseModel implements Arrayable, Responsable, ArrayAccess
 
         return array_merge(array_map(
             function (ReflectionMethod $method) {
-            return $method->getName();
-        },
+                return $method->getName();
+            },
             (new ReflectionClass(self::class))->getMethods(ReflectionMethod::IS_PUBLIC)
         ), $this->ignore);
     }
